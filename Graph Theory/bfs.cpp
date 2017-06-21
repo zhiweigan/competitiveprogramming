@@ -79,9 +79,7 @@ int main(){
     
     int n,m;
     cin>>n>>m; //number of nodes, number of edges
-    for(int i = 0; i < n; i++){
-        dist[i] = INT_MAX;
-    }
+    
     
     for(int i = 0; i < m; i++){ //take input for edges
         int u,v;
