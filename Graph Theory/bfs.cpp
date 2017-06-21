@@ -47,8 +47,8 @@ void bfswithdistance(int s){
         
         bfs.pop(); //pop current node from queue
         
-        for(auto elem:adj[current]){
-            if(visited[elem] != 1){
+        for(auto elem:adj[current]){ //for all adjacent nodes
+            if(visited[elem] != 1){ //if not visited
                 dist[elem] = dist[current] + 1; //distance to adjacent node = distance to current node + 1
                 bfs.push(elem);
             }
