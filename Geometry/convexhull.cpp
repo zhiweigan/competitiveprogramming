@@ -81,7 +81,7 @@ stack<ii> convexhull(vector<ii> points){
     points[0].second = p0.second;
     
     
-    sort(points.begin(), points.end(), compare);
+    sort(points.begin()+1, points.end(), compare);
     
     //sort points in an anticlockwise manner.
     

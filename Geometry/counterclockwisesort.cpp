@@ -84,11 +84,14 @@ int main(){
     
     p0.first = points[min].first;
     p0.second = points[min].second;
+    points[min] = points[0];
+    points[0].first = p0.first;
+    points[0].second = p0.second;
     
     //set this as comparative "anchor"
     
     //sort
-    sort(points.begin(), points.end(), compare);
+    sort(points.begin()+1, points.end(), compare);
     
     for(int i = 0; i < n; i++){
         cout<<points[i].first<<" "<<points[i].second<<endl;

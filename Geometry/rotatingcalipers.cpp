@@ -105,11 +105,14 @@ int main(){
     
     p0.first = hull[min1].first;
     p0.second = hull[min1].second;
+    hull[min1] = hull[0];
+    hull[0].first = p0.first;
+    hull[0].second = p0.second;
     
     //set this as comparative "anchor"
     
     //sort hull points in clockwise manner
-    sort(hull.begin(), hull.end(), compare);
+    sort(hull.begin()+1, hull.end(), compare);
     
     
     //find all antipodal points
