@@ -43,13 +43,12 @@ int orientation(pair<int,int> p1, pair<int,int> p2, pair<int,int> p3){
 }
 
 pair<int,int> p0;
-//comparative function for sorting, if it is counterclockwise, return 0, and 1 if not.
-//This is so the more counterclockwise it is, the further it is in the array
+//comparative function for sorting, if it is counterclockwise, return 1, and 0 if not.
 int compare(pair<int,int> p1, pair<int,int> p2){
     int o = orientation(p0, p1, p2);
     if(o == 0) //if collinear
         return distsq(p0, p2) < distsq(p0, p1); //return 1 if p2 is closer than p1 i.e. if the point is closer, make it appear closer to the front of the array after sorting
-    return o == 1; //if clockwise, return 1.
+    return o == 2; //if clockwise, return 0.
 }
 
 
