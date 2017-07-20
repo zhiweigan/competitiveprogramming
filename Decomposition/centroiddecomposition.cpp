@@ -68,7 +68,7 @@ void findcentroid(int cur, int p, int n, int prevc){
         int to = adj[cur][i];
         
         if(parents[to] == -1){
-            dfs(to,p);
+            dfs(to,cur);
             findcentroid(to,cur,subtreesizes[to],cur);
         }
     }
