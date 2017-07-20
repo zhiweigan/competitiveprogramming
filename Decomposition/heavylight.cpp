@@ -36,7 +36,7 @@ vector<int> adj[N];
 int n,m;
 int subtreesizes[N] = {0};
 int parents[N] = {0};
-int pos,cntchain;
+int pos = 0,cntchain = 0;
 int chainleader[N];
 int homechain[N];
 int homepos[N];
