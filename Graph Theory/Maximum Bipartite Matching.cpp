@@ -47,7 +47,7 @@ bool bpm(int u )
         {
             visited[elem] = true;
             
-            if (matchR[elem] < 0 || bpm(u))
+            if (matchR[elem] < 0 || bpm(matchR[elem]))
             {
                 matchR[elem] = u;
                 return true;
