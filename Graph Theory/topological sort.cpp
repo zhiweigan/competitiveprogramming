@@ -17,63 +17,38 @@ int visited[1000]  = {0};
 int flag = 0;
 vector<int> L;
 
-void visit(int s){
-    if(visited[s] == 2){
-        flag = 1;
+void visit(int u){
+    visited[u] = 1;
+    for(int v:graph[u]){
+    	if(!visited[v]){
+    		visit(v);
+    	}
     }
-    if(visited[s] == 0){
-        visited[s] = 2;
-        for(int elem:graph[s]){
-            visit(elem);
-        }
-        visited[s] = 1;
-        L.push_back(s);
-    }
-    
-    
+    L.push_back(u);
 }
 
 vector<int> toposort(){
     
-    
-    
-    
-    
-    while(flag == 0){
-        int s = 0;
-        int internalflag = 0;
-        for(int i = 0; i < n; i++){
-            if(visited[i] == 0){
-                internalflag = 1;
-                s = i;
-                break;
-            }
-        }
-        if(internalflag == 1){
-            flag = 1;
-        }
-        
-        visit(s);
+    for(int i = 0; i < n; i++){
+    	if(!visited[i]){
+    		visit(i);
+    	}
     }
     
-    
-    
     return L;
-    
     
 }
 
 
 int main(int argc, const char * argv[]) {
-    
-    cin>>n;
-    for(int i = 0; i < n-1; i++){
+    cin>>n>>m;
+    for(int i = 0; i < m; i++){
         int a,b;
-        cin>>a>>b;
+        cin>>a>>b; a--; b--;
         graph[a].push_back(b);
     }
     
-    visit(0);
+    toposort();
     reverse(L.begin(), L.end());
     
     for(int i = 0; i < L.size(); i++){
