@@ -75,14 +75,10 @@ int main(){
         //for bidirectional graphs
         
     }
-    
     memset(parent, -1, sizeof(int) * n);
     for(int i = 0; i < n; i++){
         if(!visited[i]){
             Bridgefinder(i);
         }
     }
-    
-    
-    
 }

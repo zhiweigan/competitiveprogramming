@@ -55,7 +55,7 @@ void dfs(int cur, int p){
     }
 }
 
-//seperates the tree into chains of less than n/3 length. There will be <= log(n) chains
+//seperates the tree into chains. There will be <= log(n) chains
 
 void heavy_light(int x = 0, int dad = -1, int k = -1, int p = 0){
     if(p == 0){
@@ -67,7 +67,7 @@ void heavy_light(int x = 0, int dad = -1, int k = -1, int p = 0){
     homepos[x] = pos++;
     
     int mx = -1,sz = adj[x].size();
-    
+    //find max child subtree size
     for(int i = 0;i < sz;++i)
         if(adj[x][i] != dad && (mx == -1 || subtreesizes[ adj[x][i] ] > subtreesizes[ adj[x][mx] ]) )
             mx = i;

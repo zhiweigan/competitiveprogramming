@@ -89,26 +89,16 @@ int main(){
         cin>>u>>v;
         
         u--; v--; //for 1 indexed graphs
-        
         adj[u].push_back(v);
         adj[v].push_back(u);
         //for bidirectional graphs
-        
     }
-    
-    
-    
     for(int i = 0; i < n; i++){
         parents[i] = -1;
     }
     dfs(0,-1);
-    
     findcentroid(0, -1, subtreesizes[0], -2);
-    
     for(int i = 0; i < n; i++){
         cout<<parents[i]<<" ";
     }
-    
-    
-    
 }
